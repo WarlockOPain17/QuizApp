@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<style>
+		body {
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			font-size: 14pt;
+			background: AliceBlue
+		}
+		#wrapper {
+			width: 80%;
+			padding: 1%;
+			margin: 1em auto;
+			border: solid 1px silver;
+			background:Azure
+		}
+label {
+display: block;
+}
+
+input {
+width: 30px;
+margin-left: 20px;
+}
+
+h2 {
+clear: both;
+padding-top: 20px;
+}
+
+button {
+width: 100px;
+margin-top: 20px;
+}
+
+#main {
+width: 80%;
+max-width: 950px;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+#header {
+margin-top: 0;
+border: 2px solid black;
+padding: 5px;
+height: 250px;
+background: beige;
+background-image: url("code.jpg");
+color: white;
+}
+	</style>
+
+	
+</head>
+
+<body>
+		<h1><p align="Center">Aakash's Quiz</p></h1>
+<hr>
+
+<br>
+<p align="center"><img src="board.jpg" /></p>
+<p><b>Welcome to the quiz. There are 5 questions based on General Knowledge. <br></b><p>
+<p><b>Click on whatever answer you feel is right and answer all the questions and then click on submit.</b></p>
+<p><b>You will get your result below.</b></p> 
+
+
+<br>	
+<div id="wrapper"> 
+<form id="form1">
+
+<h2>Which of the following Country is situated to the west of Arunachal Pradesh?</h2>
+<font size="5">
+<label for="cont"><input type="radio" name="country" value="0" id="cont" />Thailand</label>
+<label for="conm"><input type="radio" name="country" value="0" id="conm" />Mynamar</label>
+<label for="conb"><input type="radio" name="country" value="1" id="conb" />Bhutan</label>
+<label for="conl"><input type="radio" name="country" value="0" id="conl"/>Laos</label>
+</font>
+
+<h2>Which batsman made the first four hundred runs in an innings of a test match?</h2>
+<font size="5">
+<label for="sub_string"><input type="radio" name="sub" value="0" id="sub_string"/>Ricky Ponting</label>
+<label for="sub_join"><input type="radio" name="sub" value="0" id="sub_join"/>Sachin Tendulkar</label>
+<label for="sub_info"><input type="radio" name="sub" value="0" id="sub_info" />Donald Bradman</label>
+<label for="sub_condition"><input type="radio" name="sub" value="1" id="sub_condition" />Brian Lara</label>
+</font>
+
+<h2>Which of the following team won Ranji trophy for record 41 times?</h2>
+<font size="5">
+<label for="cat_string"><input type="radio" name="con" value="0" id="cat_string" />Delhi</label>
+<label for="cat_join"><input type="radio" name="con" value="1" id="cat_join" />Mumbai</label>
+<label for="cat_info"><input type="radio" name="con" value="0" id="cat_info" />Tamil Nadu</label>
+<label for="cat_condition"><input type="radio" name="con" value="0" id="cat_condition" />Karnataka</label>
+</font>
+
+<h2>What are isotopes?</h2>
+<font size="5">
+<label for="isotope_pro"><input type="radio" name="isotope" value="1" id="isotope_pro" />Elements having equal number of protons but different neutrons.</label>
+<label for="isotope_neu"><input type="radio" name="isotope" value="0" id="isotope_neu" />Elements having equal number of neutrons but different protons.
+</label>
+<label for="isotope_pre"><input type="radio" name="isotope" value="0" id="isotope_prone" />Elements having equal number of protons and neutrons.</label>
+<label for="isotope_prw"><input type="radio" name="isotope"  value="0" id="isotope_p" />Elements having equal number of protons, neutrons and electrons.</label>
+</font>
+
+<h2>The members of the Rajya Sabha are elected by?</h2>
+<font size="5">
+<label for="raj_1"><input type="radio" name="raj" value="1" id="raj_1"/>elected members of the legislative assembly</label>
+<label for="raj_2"><input type="radio" name="raj" value="0" id="raj_2"/>the people</label>
+<label for="raj_3"><input type="radio" name="raj" value="0" id="raj_3"/>Lok Sabha</label>
+<label for="raj_4"><input type="radio" name="raj" value="0" id="raj_4" />elected members of the legislative council</label>
+</font>
+
+<button type="submit" value="Submit">Submit</button>
+
+</form>
+	</div>
+	
+</body>
+<script>
+document.getElementById("form1").onsubmit=function() {
+       country = parseInt(document.querySelector('input[name = "country"]:checked').value);
+	   sub = parseInt(document.querySelector('input[name = "sub"]:checked').value);
+	   con = parseInt(document.querySelector('input[name = "con"]:checked').value);
+       isotope = parseInt(document.querySelector('input[name = "isotope"]:checked').value);
+	   raj = parseInt(document.querySelector('input[name = "raj"]:checked').value);
+	   
+	   
+	   result = country + sub + con + isotope + raj;
+	   
+	document.getElementById("grade").innerHTML = result;
+	   
+
+
+if (result == 0) {result2 = "I don't think you studied.<br><img src='0.jpeg' width='300' />"};
+if (result == 1) {result2 = "You need to spend more time. Try again.<br><img src='1.jpeg' width='300' />"};
+if (result == 2) {result2 = "I think you could do better. Try again.<br><img src='2.jpg' width='300' />"};
+if (result == 3) {result2 = "So close. Try again.<br><img src='3.jpg' width='300' />"};
+if (result == 4) {result2 = "Good. Try Aiming for full next time ! :)<br><img src='4.jpg' width='300' />"};
+if (result == 5) {result2 = "Excellent! You're a GK pro!<br><img src='5.jpg' width='300' />"};
+document.getElementById("grade2").innerHTML = result2; 
+
+return false; 
+} 
+
+</script>
+
+
+<p>Your grade is: <span id="grade">__</span> /5        (scroll down)</p>
+<p id="grade2"></p>
+
+
+</html>

@@ -1,0 +1,77 @@
+<html>
+<head>
+<font color="Black" size="18">
+<p align="center">Aakash's Quiz</p>
+</font>
+<hr>
+<style>
+#wrapper {
+			width: 40%;
+			padding: 1%;
+			margin: 1em auto;
+			border: solid 5px silver;
+			background-color: yellow;
+		}
+input[type=button] {
+    width: 20em;  height: 4em;
+}
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 2px;
+    color: black;
+}
+</style>
+<script type="text/javascript">
+
+function Welcome()
+{
+
+if( document.myform.customer.value == "" )
+{
+alert("Enter some value!");
+return;
+}
+
+newname= escape(document.myform.customer.value) + "";
+document.cookie="name=" + newname;
+alert("Welcome to the Quiz " + newname + " !!!")
+var con = confirm("Do you want to continue ?");
+
+if(con == true )
+{
+window.location='mcq1.html'
+return true;
+}
+
+else
+{
+window.location='index.html'
+return false;
+}
+}
+
+</script>
+
+
+</head>
+
+
+<body bgcolor="grey">
+<br><br>
+<font size="6">
+<div id="wrapper">
+ <form name="myform" action="">
+         Enter name: <input type="text" name="customer" /><br /><br/>
+	&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+         <input type="button" value="Welcome" onclick="Welcome();"/>
+
+      </form>
+
+</div>
+</html>
+</font>
